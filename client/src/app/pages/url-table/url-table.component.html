@@ -1,0 +1,23 @@
+<div class="flex justify-center w-full">
+  <div>
+    <div class="border-orange-400 mt-[30px] bg-black/70 rounded-t-lg">
+      <table class="text-[30px] text-white">
+        <thead>
+          <tr>
+            <th class="w-[600px]"><span class="font-medium">Full</span> URL</th>
+            <th class="w-[400px]"><span class="font-medium">Short</span> URL</th>
+            <th class="w-[200px]"><span class="font-medium">Clicks</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let url of urlService.urls" class="odd:bg-orange-400/20">
+            <td class='text-center'><a href={{url.FullUrl}} class="underline">{{url.FullUrl}}</a></td>
+            <td class='text-center'><a href={{url.ShortUrl}} class="underline">{{url.ShortUrl}}</a></td>
+            <td class='text-center'>{{url.Clicks}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<app-alert></app-alert>

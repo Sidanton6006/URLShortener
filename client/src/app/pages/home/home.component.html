@@ -1,0 +1,7 @@
+<div class="w-full flex justify-center">
+  <div class="flex flex-col w-[800px] bg-black/70 p-[30px] rounded-lg text-[40px] space-y-[35px] mt-[30px]">
+    <span class="font-medium text-white">Let's <span class="text-orange-400">short</span> you're <span class="text-orange-400">URL's</span></span>
+    <input [(ngModel)]="url" type="text" class='bg-transparent text-white border-[2px] rounded-[50px] hover:border-orange-400 px-[25px]' />
+    <button (click)="short()" class='text-orange-400 h-auto border-[2px] border-orange-400 hover:text-white bg-black/90 hover:bg-orange-400 rounded-lg'>Short!</button>
+  </div>
+</div>

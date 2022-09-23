@@ -1,0 +1,19 @@
+<div class="flex-auto w-full h-auto backdrop-blur-[20px] border-b-2 border-[#3e1e68] bg-black/50">
+  <div class="flex flex-row justify-between h-[100px] mx-[200px]">
+    <div class='text-[50px] h-min my-auto cursor-pointer'>
+      <span routerLink="/" routerLinkActive="active" ariaCurrentWhenActive="page" class='text-white font-medium'>URL <span class='text-orange-400 font-normal'>Shortener</span></span>
+    </div>
+
+    <div class='text-[40px] h-min my-auto text-white space-x-[30px]'>
+      <span routerLink="/global_urls" class="hover:text-orange-400 cursor-pointer">URL's Table</span>
+      <span *ngIf="userService.currentUser" routerLink="/my_urls" class="hover:text-orange-400 cursor-pointer">My URL's</span>
+      <span routerLink="/about" class="hover:text-orange-400 cursor-pointer">About</span>
+      <button *ngIf="!userService.currentUser" (click)="dialogService.setLoginVisibility(true)" class='w-[200px] text-orange-400 h-auto border-[2px] border-orange-400 hover:text-white hover:bg-orange-400 rounded-lg'>Login</button>
+
+      <button *ngIf="userService.currentUser" class='w-[200px] text-orange-400 h-auto border-[2px] border-orange-400 hover:text-white hover:bg-orange-400 rounded-lg'>{{userService.currentUser.UserName}}</button>
+      <button (click)="userService.logout()" *ngIf="userService.currentUser" class='w-[200px] text-orange-400 h-auto border-[2px] border-orange-400 hover:text-white hover:bg-orange-400 rounded-lg'>Logout</button>
+    </div>
+  </div>
+</div>
+<app-login-dialog *ngIf="dialogService.loginVisible"></app-login-dialog>
+<app-register-dialog *ngIf="dialogService.registerVisible"></app-register-dialog>
